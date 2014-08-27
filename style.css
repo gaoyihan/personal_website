@@ -27,10 +27,6 @@ a:hover.more-link {
 	text-decoration: none;
 }
 
-p.pub a {
-	display: block;
-}
-
 /* Headers */
 h1, h2, h3, h4 {
 	font-weight: bold;
