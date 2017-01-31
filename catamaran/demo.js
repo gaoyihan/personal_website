@@ -11,7 +11,6 @@ demo.submit = function() {
 
     var req = new XMLHttpRequest();
     req.open('GET', '/catamaran/Demo');
-    req.setRequestHeader('Content-type', 'application/json');
     req.onreadystatechange = ajaxResponseHandler;
     req.send();    
     return 
