@@ -1,7 +1,7 @@
 var http = require("http");
 var fs = require('fs');
 var url = require('url');
-var catamaran = require('./catamaran.node');
+var catamaran = require('./catamaran/catamaran.node');
 
 // Create a server
 http.createServer( function (request, response) {  
