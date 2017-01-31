@@ -13,13 +13,16 @@ http.createServer( function (request, response) {
    
     // Read the requested file content from file system
     if (pathname == '/Demo') {
-         // Page found	  
-         // HTTP Status: 200 : OK
-         // Content Type: text/plain
-         response.writeHead(200, {'Content-Type': 'text/html'});
-         
-         // Write the content of the file to response body
-         response.write(catamaran.demo());		
+        // Page found	  
+        // HTTP Status: 200 : OK
+        // Content Type: text/plain
+        response.writeHead(200, {'Content-Type': 'text/html'});
+        
+        // Write the content of the file to response body
+        response.write(catamaran.demo());		
+
+        // Send the response body 
+        response.end();            
     } else {
         fs.readFile('catamaran' + pathname, function (err, data) {
             if (err) {
@@ -36,10 +39,11 @@ http.createServer( function (request, response) {
                 // Write the content of the file to response body
                 response.write(data.toString());		
             }   
+            // Send the response body 
+            response.end();            
         });
     }
-    // Send the response body 
-    response.end();
+
 }).listen(8081);
 
 // Console will print the message
