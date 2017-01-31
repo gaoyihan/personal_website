@@ -36,7 +36,7 @@ http.createServer( function (request, response) {
                 // Write the content of the file to response body
                 response.write(data.toString());		
             }   
-        }
+        });
     }
     // Send the response body 
     response.end();
