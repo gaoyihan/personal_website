@@ -4,7 +4,8 @@ demo.submit = function() {
     var ajaxResponseHandler = function() {
         if (this.readyState === 4 && this.status === 200) {
             var response = this.responseText;
-            document.getElementById('display').value = response;
+            var text = document.createTextNode(response);
+            document.getElementById('display').appendChild(text);
         }
     };
 
