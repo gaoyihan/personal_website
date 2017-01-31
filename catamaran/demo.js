@@ -9,7 +9,7 @@ demo.submit = function() {
     };
 
     var req = new XMLHttpRequest();
-    req.open('GET', 'catamaran/Demo');
+    req.open('GET', '/Demo');
     req.setRequestHeader('Content-type', 'application/json');
     req.onreadystatechange = ajaxResponseHandler;
     req.send();    
