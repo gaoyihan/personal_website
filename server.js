@@ -20,8 +20,8 @@ http.createServer( function (request, response) {
          
          // Write the content of the file to response body
          response.write(catamaran.demo());		
-    } else {
-        fs.readFile(pathname.substr(1), function (err, data) {
+    } else if (pathname == '/demo.html') {
+        fs.readFile('catamaran/demo.html', function (err, data) {
             if (err) {
                 console.log(err);
                 // HTTP Status: 404 : NOT FOUND
