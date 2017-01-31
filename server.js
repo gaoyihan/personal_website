@@ -12,7 +12,7 @@ http.createServer( function (request, response) {
     console.log("Request for " + pathname + " received.");
    
     // Read the requested file content from file system
-    if (pathname == '/catamaran/Demo') {
+    if (pathname == '/Demo') {
         // Page found	  
         // HTTP Status: 200 : OK
         // Content Type: text/plain
