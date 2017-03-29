@@ -2,21 +2,32 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Catamaran: Unsupervised Structure Extraction System</title> 
-    <script type="text/javascript" src="demo.js" async></script>
+    <script src="demo.js"></script>
     <meta name="description" content="Catamaran">
     <meta name="keywords" content="Catamaran demo structure extraction">
-    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
 
   <body>
     <div class="wrap">
       <div id="header">
         <h1 id="headername">Catamaran Demo</h1>
-        <br>
+        <div id="input_textfield">
+            <textarea name="textfield" cols="500" rows="500"></textarea>
+        </div>
         <button type="button" onclick="demo.submit()">
           Submit
         </button>
+		<h3>File Upload:</h3>
+		<form action = "/extract-from-file" method = "POST"
+			enctype = "multipart/form-data">
+			<input type="file" name="uploaded" size="10" />
+			<br />
+			<input type="submit" value="Upload File" />
+		</form>
         <div id="display">
+          <table id="table">
+          <table>
         </div>
       </div>
     </div>
