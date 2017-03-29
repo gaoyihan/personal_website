@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var async = require('async');
 var session = require('express-session');
-var FileStore = require('session-file-store');
+var FileStore = require('session-file-store')(session);
 
 var http = require('http');
 var fs = require('fs');
