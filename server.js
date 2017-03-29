@@ -20,6 +20,8 @@ app.use(session({
 	store: new FileStore()
 }));
 
+catamaran_js = {}
+
 catamaran_js.event_listener = new events.EventEmitter();
 
 catamaran_js.extract_from_file = function (filename, schema, callback) {
