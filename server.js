@@ -8,7 +8,7 @@ var http = require('http');
 var fs = require('fs');
 var url = require('url');
 var catamaran = require('./catamaran/catamaran.node');
-var EventEmitter = require('events');
+var events = require('events');
 
 app.use(express.static('catamaran'));
 
@@ -20,7 +20,7 @@ app.use(session({
 	store: new FileStore()
 }));
 
-catamaran_js.event_listener = new EventEmitter();
+catamaran_js.event_listener = new events.EventEmitter();
 
 catamaran_js.extract_from_file = function (filename, schema, callback) {
 	var table = catamaran.extract_from_file(filename, schema);
