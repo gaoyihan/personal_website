@@ -9,8 +9,11 @@ var fs = require('fs');
 var url = require('url');
 var catamaran = require('./catamaran/catamaran.node');
 var events = require('events');
+var multer = require('multer');
 
 app.use(express.static('catamaran'));
+
+var upload = multer({ dest: './tmp/' });
 
 app.use(session({
 	name: 'session-id',
@@ -65,14 +68,14 @@ app.post('/extract-from-string', function (req, res) {
 	});
 });
 
-app.post('/extract-from-file', function (req, res) {
-	var filepath = req.files.uploaded.path;
-	catamaran_js.on(filepath, function(callback) {
+app.post('/extract-from-file', upload.single('uploaded'), function (req, res) {
+	var filepath = req.file.path;
+	catamaran_js.event_listener.on(filepath, function(callback) {
 		catamaran_js.extract_struct_from_file(filepath, callback);
 	});
 	req.session.last_access = Date.now();
 	req.session.file_id = filepath;
-	process.setTimeout( function() {
+	setTimeout( function() {
 		if (req.sessions.last_access + 3000000 < Date.now()) {
 			fs.unlinkSync(filepath);
 		}
