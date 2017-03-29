@@ -10,7 +10,7 @@ demo.submit = function() {
     };
 
     var req = new XMLHttpRequest();
-    req.open('GET', '/catamaran/extract-from-string');
+    req.open('GET', '/extract-from-string');
     req.onreadystatechange = ajaxResponseHandler;
     req.send();    
     return 
@@ -26,7 +26,7 @@ demo.get_table = function() {
     };
 
     var req = new XMLHttpRequest();
-    req.open('GET', '/catamaran/get-table');
+    req.open('GET', '/get-table');
     req.onreadystatechange = ajaxResponseHandler;
     req.send();    
     return 
