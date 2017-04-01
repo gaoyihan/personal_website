@@ -12,24 +12,24 @@
     <div class="wrap">
       <div id="header">
         <h1 id="headername">Catamaran Demo</h1>
-        <div id="input_textfield">
-            <textarea name="textfield" cols="150" rows="500"></textarea>
-        </div>
-        <button type="button" onclick="demo.submit()">
-          Submit
-        </button>
-		<h3>File Upload:</h3>
-		<form action = "/extract-from-file" method = "POST"
-			enctype = "multipart/form-data">
-			<input type="file" name="uploaded" size="10" />
-			<br />
-			<input type="submit" value="Upload File" />
-		</form>
-        <div id="display">
-          <table id="table">
-          <table>
-        </div>
       </div>
+      <div id="input_textfield">
+        <textarea name="textfield" cols="150" rows="500"></textarea>
+      </div>
+      <button type="button" onclick="demo.submit()">
+        Submit
+      </button>
+      <h3>File Upload:</h3>
+      <form action = "/extract-from-file" method = "POST"
+        enctype = "multipart/form-data">
+        <input type="file" name="uploaded" size="10" />
+        <br />
+        <input type="submit" value="Upload File" />
+      </form>
+      <div id="display">
+        <table id="table">
+        </table>
+      </div>      
     </div>
   </body>
 </html>
