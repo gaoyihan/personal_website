@@ -13,3 +13,10 @@ textarea {
 	max-height: 100px;
 }
 
+table {
+	border: 1px solid black;
+}
+
+td {
+	border: 1px solid black;
+}
