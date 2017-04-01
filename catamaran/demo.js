@@ -1,6 +1,6 @@
 var demo = {};
 
-demo.popluate = function(table_content) {
+demo.populate = function(table_content) {
     var tbl = document.getElementById('myTable');
     for (i = 0; i < table_content.length; ++i) {
         var row = table.insertRow();
