@@ -5,11 +5,11 @@ demo.submit = function() {
         if (this.readyState === 4 && this.status === 200) {
             var response = this.responseText;
             var table_content = JSON.parse(response);
-            var table = document.getElementById('table');
+            var tbl = document.getElementById('myTable');
             for (i = 0; i < table_content.length; ++i) {
-                var row = table.insertRow(i);
+                var row = table.insertRow();
                 for (j = 0; j < table_content[i].length; ++j) {
-                    var cell = row.insertCell(j);
+                    var cell = row.insertCell();
                     var text = document.createTextNode(table_content[i][j]);
                     cell.appendChild(text);
                 }
