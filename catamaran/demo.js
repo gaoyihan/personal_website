@@ -2,6 +2,9 @@ var demo = {};
 
 demo.populate = function(table_content) {
     var tbl = document.getElementById('myTable');
+    while (tbl.firstChild) {
+        tbl.removeChild(tbl.firstChild);
+    }
     for (i = 0; i < table_content.length; ++i) {
         var row = tbl.insertRow();
         for (j = 0; j < table_content[i].length; ++j) {
