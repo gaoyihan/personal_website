@@ -7,10 +7,12 @@ body {
 	padding: 0; 
 	background: #FFF; /*-- url(../images/bg.gif) repeat-x; */
 	text-align: center;
+	font-family: Garamond, Calibri, serif;
 }
 
 textarea {
 	max-height: 100px;
+	font-family: Garamond, Calibri, serif;
 }
 
 table {
