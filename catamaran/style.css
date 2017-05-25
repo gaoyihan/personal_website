@@ -14,7 +14,9 @@ textarea {
 }
 
 table {
+	margin: auto;
 	border: 1px solid black;
+	font-family: Garamond, Calibri, serif;
 }
 
 td {
@@ -28,6 +30,7 @@ td {
 
 #display {
 	width: 100%;
+	margin: auto;
 }
 
 #Datamaran_logo {
