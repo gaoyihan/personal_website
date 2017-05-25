@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Catamaran: Unsupervised Structure Extraction System</title> 
+    <title>Datamaran: Unsupervised Structure Extraction System</title> 
     <script src="demo.js"></script>
     <meta name="description" content="Catamaran">
     <meta name="keywords" content="Catamaran demo structure extraction">
@@ -11,22 +11,28 @@
   <body>
     <div class="wrap">
       <div id="header">
-        <h1 id="headername">Catamaran Demo</h1>
+        <h1 id="headername">Datamaran Demo</h1>
       </div>
-      <div id="input_textfield">
-        <textarea name="textfield" cols="150" rows="500"></textarea>
-      </div>
-      <button type="button" onclick="demo.submit()">
-        Submit
-      </button>
-      <h3>File Upload:</h3>
-      <form action = "/extract-from-file" method = "POST"
-        enctype = "multipart/form-data">
-        <input type="file" name="uploaded" size="10" />
-        <br />
-        <input type="submit" value="Upload File" />
-      </form>
+	  <div id="input_wrapper">
+	    <h3>Direct Text Input:</h3>
+        <div id="input_textfield">
+          <textarea name="textfield" cols="150" rows="500"></textarea>
+		  <button type="button" onclick="demo.submit()">
+		    Submit
+		  </button>		
+        </div>
+        <h3>File Upload:</h3>
+        <form action = "/extract-from-file" method = "POST"
+          enctype = "multipart/form-data">
+          <input type="file" name="uploaded" size="10" />
+          <input type="submit" value="Upload File" />
+        </form>
+	  </div>
       <div id="display">
+	    <h3>Result Table:</h3>
+		<button type="button">
+		  Download Result
+		</button>
         <table id="myTable">
         </table>
       </div>      

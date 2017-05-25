@@ -20,3 +20,12 @@ table {
 td {
 	border: 1px solid black;
 }
+
+#input_textfield {
+	width: 100%;
+	margin: auto;
+}
+
+#display {
+	width: 100%;
+}
