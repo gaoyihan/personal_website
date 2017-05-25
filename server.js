@@ -51,7 +51,10 @@ catamaran_js.extract_struct_from_file = function (filename, callback) {
             process.nextTick(function() {
                 catamaran_js.select_schema(filename, schema_list, function (schema) {
                     process.nextTick(function() {
-                        catamaran_js.extract_from_file(filename, schema, callback);
+                        if (schema != 'nullptr')
+                            catamaran_js.extract_from_file(filename, schema, callback);
+                        else
+                            callback('Not Found!');
                     });
                 });
             });
@@ -85,10 +88,13 @@ app.post('/extract-from-file', upload.single('uploaded'), function (req, res) {
 app.get('/get-table', function (req, res) {
     if (typeof req.session.file_id != 'undefined') {
         catamaran_js.event_listener.emit(req.session.file_id, function(table) {
-            res.end( JSON.stringify(table) );
+            if (table === 'Not Found!')
+                res.end(JSON.stringify([['No Table Found']]));
+            else 
+                res.end( JSON.stringify(table) );
         });
     } else {
-        res.end('No Table Found');
+        res.end(JSON.stringify([['No Table Found']]));
     }
 });
 
